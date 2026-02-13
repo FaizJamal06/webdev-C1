@@ -12,6 +12,7 @@ const Hero = () => {
                 loop
                 muted
                 playsInline
+                preload="auto"
                 poster="/videos/ship-hero-poster.jpg" // Fallback if we had one, browser might show first frame
             >
                 <source src="/videos/ship-hero-section-video.mp4" type="video/mp4" />
