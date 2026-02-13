@@ -12,8 +12,7 @@ const Hero = () => {
                 muted
                 loop
                 playsInline
-                preload="metadata"
-                poster="/videos/ship-hero-poster.jpg"
+                preload="auto"
             >
                 <source src="/videos/ship-hero-section-video.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
