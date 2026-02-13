@@ -13,6 +13,7 @@ const Hero = () => {
                 loop
                 playsInline
                 preload="auto"
+                poster="/videos/ship-hero-poster.svg"
             >
                 <source src="/videos/ship-hero-section-video.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
