@@ -9,11 +9,11 @@ const Hero = () => {
             <video
                 className="hero-video-bg"
                 autoPlay
-                loop
                 muted
+                loop
                 playsInline
-                preload="auto"
-                poster="/videos/ship-hero-poster.jpg" // Fallback if we had one, browser might show first frame
+                preload="metadata"
+                poster="/videos/ship-hero-poster.jpg"
             >
                 <source src="/videos/ship-hero-section-video.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
