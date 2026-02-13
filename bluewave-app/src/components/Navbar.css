@@ -1,0 +1,143 @@
+/* Navbar.css */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 5%;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.navbar.scrolled {
+    background: rgba(10, 46, 77, 0.95);
+    /* Deep Ocean Blue with opacity */
+    padding: 1rem 5%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar-logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-white);
+    cursor: pointer;
+    letter-spacing: 0.5px;
+}
+
+.navbar-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: var(--color-white);
+    font-family: var(--font-primary);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    opacity: 0.9;
+}
+
+.navbar-links li a:hover {
+    color: var(--color-soft-sea-green);
+    opacity: 1;
+}
+
+/* Specific style for CTA in nav if desired */
+.nav-cta {
+    padding: 0.5rem 1.2rem;
+    border: 1px solid var(--color-white);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-cta:hover {
+    background-color: var(--color-white);
+    color: var(--color-deep-ocean) !important;
+}
+
+/* Mobile Toggle */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-white);
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hamburger Animation */
+.bar.open:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.bar.open:nth-child(2) {
+    opacity: 0;
+}
+
+.bar.open:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: flex;
+    }
+
+    .navbar-container {
+        padding: 0;
+        /* Reset specific padding if needed, but flex justify-space-between handles it */
+    }
+
+    .navbar-links {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--color-deep-ocean);
+        justify-content: center;
+        align-items: center;
+        transition: right 0.4s ease-in-out;
+        padding-top: 60px;
+        /* Space for logo/close button if needed */
+        z-index: 999;
+    }
+
+    .navbar-links.active {
+        right: 0;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar-links li {
+        margin: 1.5rem 0;
+    }
+
+    .navbar-links li a {
+        font-size: 1.5rem;
+    }
+}
