@@ -14,7 +14,7 @@ const Hero = () => {
                 playsInline
                 poster="/videos/ship-hero-poster.jpg" // Fallback if we had one, browser might show first frame
             >
-                <source src="/videos/ship-hero.mp4" type="video/mp4" />
+                <source src="/videos/ship-hero-section-video.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
 
