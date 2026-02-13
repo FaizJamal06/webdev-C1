@@ -72,8 +72,11 @@ body {
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 700px;
-  padding: 0 5%;
+  max-width: 800px;
+  /* Slightly wider for the larger font sizes */
+  padding-left: var(--space-80);
+  /* ~80px, roughly 5-6% of 1440p */
+  padding-right: var(--space-24);
   color: var(--color-white);
   animation: fadeIn 0.8s ease-out forwards;
 }
@@ -81,37 +84,42 @@ body {
 /* Typography */
 .hero-headline {
   font-family: var(--font-heading);
-  font-size: 3.5rem;
+  font-size: var(--text-h1);
   font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  /* Tighter for display text */
+  margin-bottom: var(--space-24);
+  letter-spacing: -0.02em;
+  /* Tighter tracking for headings */
   /* GSAP handles animation */
 }
 
 .hero-subheadline {
-  font-size: 1.25rem;
+  font-size: var(--text-body-lg);
   font-weight: 300;
   color: var(--color-soft-sea-green);
-  margin-bottom: 2.5rem;
+  margin-bottom: var(--space-40);
   max-width: 600px;
+  line-height: 1.6;
   /* GSAP handles animation */
 }
 
 /* Buttons */
 .hero-cta-group {
   display: flex;
-  gap: 1.5rem;
+  gap: var(--space-24);
   opacity: 0;
   animation: fadeIn 0.8s ease-out 0.8s forwards;
 }
 
 .btn {
-  padding: 1rem 2rem;
-  font-size: 1rem;
+  padding: var(--space-16) var(--space-32);
+  font-size: var(--text-body);
   font-weight: 600;
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  /* Quick snappy transition */
   text-decoration: none;
   display: inline-block;
   font-family: var(--font-primary);
@@ -121,24 +129,27 @@ body {
   background-color: var(--color-teal);
   color: var(--color-white);
   border: none;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-lg);
 }
 
 .btn-primary:hover {
-  background-color: #178f87;
-  /* Slightly darker teal */
+  background-color: var(--color-teal-dark);
   transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  /* Deep shadow on hover */
 }
 
 .btn-secondary {
   background-color: transparent;
   color: var(--color-white);
-  border: 2px solid var(--color-white);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  /* Subtler border */
+  backdrop-filter: blur(4px);
 }
 
 .btn-secondary:hover {
   background-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-white);
   transform: translateY(-2px);
 }
 
@@ -169,8 +180,10 @@ body {
   }
 
   .hero-content {
-    padding: 0 24px;
+    padding: 0 var(--space-24);
     max-width: 100%;
+    padding-left: var(--space-24);
+    /* Reset override */
   }
 
   .hero-headline {
